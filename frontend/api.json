@@ -1,0 +1,105 @@
+{
+  "room": [
+    {
+      "id": "1",
+      "type": "Apartamento",
+      "type-category": "Estúdio",
+      "room-type": "Espaço inteiro",
+      "qtd-accomodates": "4",
+      "qtd-bedrooms": "2",
+      "qtd-beds": "2",
+      "beds-details": [
+        {
+          "type": "Cama de casal",
+          "qtd": "1"
+        },
+        {
+          "type": "Cama de solteiro",
+          "qtd": "2"
+        }
+      ],
+      "qtd-bathrooms": "1",
+      "location": {
+        "country": "Brasil",
+        "anddress": "SM IAPI Cond. 11 Casa 7",
+        "street": "Guará 2",
+        "apt": "",
+        "city": "Brasília",
+        "state": "DF",
+        "zipcode": "71080-300",
+        "geo": {
+          "lat": "",
+          "long": ""
+        }
+      },
+      "confort-details": [
+        "Básico",
+        "Ar condicionado",
+        "Secador de cabelo",
+        "Ferro de passar",
+        "Wi-Fi"
+      ],
+      "security-details": [
+        "Extintor de incêndio",
+        "Detector de fumaça",
+        "Kit de primeiros socorros"
+      ],
+      "useful-areas": [
+        "Cozinha",
+        "Lavanderia - máquina de lavar",
+        "Estacionamento",
+        "Piscina"
+      ],
+      "images": ["imagem1.jpg", "imagem2.jpg", "imagem3.jpg", "imagem4.jpg"],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam voluptates nihil minus omnis a impedit dolor laboriosam adipisci, dolorem odit obcaecati magnam eos. Blanditiis fugiat consequatur doloremque asperiores placeat!",
+      "title": "Grand and Cozy 1920's SF Studio",
+      "price": "642",
+      "rules": [
+        {
+          "role": "Permitido fumar",
+          "situation": false,
+          "reason": "Lorem ipsum lorem mandala de carlouin seperium."
+        },
+        {
+          "role": "Eventos ou festas são permitidos",
+          "situation": false,
+          "reason": "Lorem ipsum lorem mandala de carlouin seperium."
+        },
+        {
+          "role": "Adequado para crianças (2-12 anos)",
+          "situation": true
+        },
+        {
+          "role": "Adequado para animais de estimação",
+          "situation": true
+        }
+      ],
+      "plus-info": [
+        "Deve subir escadas",
+        "Barulho em potencial",
+        "Presença de animal(is) de estimação na propriedade",
+        "Dispositivos de vigilância ou gravação na propriedade"
+      ],
+      "checkin": "depois das 14:00",
+      "checkout": "11:00",
+      "comments": [
+        {
+          "id": "1",
+          "author": "Matt",
+          "date": "novembro de 2019",
+          "comment": "Lorem ipsum dolores calarem optmiuns solares."
+        }
+      ],
+      "rate": "4,82",
+      "proprietary": [
+        {
+          "name": "Mike & Nic",
+          "address": "São Francisco, Califórnia",
+          "description": "Lorem ipsum solares dolores calare optmiun fatares doca perla matus.",
+          "avatar": "imagemAvatar.jpg",
+          "superhost": true
+        }
+      ]
+    }
+  ]
+}
