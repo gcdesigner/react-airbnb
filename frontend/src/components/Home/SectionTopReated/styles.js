@@ -31,19 +31,12 @@ export const List = styled.div`
 export const Item = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 100%;
   margin: 0 8px;
-`;
 
-export const RoomImage = styled.div`
-  width: 100%;
-  height: 222px;
-  background-image: url(${props => props.src});
-  background-position: center;
-  background-size: cover;
-  border-radius: 3px;
-  margin-bottom: 15px;
+  svg {
+    margin-top: 15px;
+  }
 `;
 
 export const Description = styled.p`

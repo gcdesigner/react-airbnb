@@ -1,25 +1,31 @@
 import React from 'react';
 
-import HomeHeader from '~/components/HomeHeader';
-import Content from '~/components/Content';
+import SectionHeader from '~/components/Home/SectionHeader';
+import Content from '~/components/shared/Content';
 import SectionTopReated from '~/components/Home/SectionTopReated';
 import SectionValuesProps from '~/components/Home/SectionValuesProps';
+import SectionRecentReserved from '~/components/Home/SectionRecentReserved';
+import SectionBannerAction from '~/components/Home/SectionBannerAction';
+import Footer from '~/components/shared/Footer';
 
 import { Container, Breadcrumb } from './styles';
 
 export default function Home() {
   return (
     <Container>
-      <HomeHeader />
+      <SectionHeader />
       <Content>
         <Breadcrumb>
-          <a href="#">United States</a>
+          <a href="/">United States</a>
           <small>Aluguéis por Temporada em Estados Unidos</small>
         </Breadcrumb>
 
         <SectionTopReated />
         <SectionValuesProps />
+        <SectionRecentReserved />
+        <SectionBannerAction />
       </Content>
+      <Footer />
     </Container>
   );
 }

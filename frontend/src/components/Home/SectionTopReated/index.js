@@ -1,17 +1,10 @@
 import React from 'react';
 
-import {
-  Container,
-  List,
-  Item,
-  RoomImage,
-  Description,
-  Author,
-  Avatar,
-} from './styles';
+import { Container, List, Item, Description, Author, Avatar } from './styles';
 
+import BGImage from '~/components/shared/BGImage';
 import SVGStar from '~/assets/icons/star';
-import Stars from '~/components/Stars';
+import RatedStars from '~/components/shared/RatedStars';
 
 import avatar1 from '~/assets/avatars/avatar1.jpg';
 import avatar2 from '~/assets/avatars/avatar2.jpg';
@@ -32,15 +25,15 @@ export default function SectionTopReated() {
         <p>
           <SVGStar />
           Acomodações em Estados Unidos foram avaliadas com
-          <strong>4.8 de 5 estrelas</strong> em mais de
-          <strong>43.500.000 avaliações</strong>
+          <strong> 4.8 de 5 estrelas</strong> em mais de
+          <strong> 43.500.000 avaliações</strong>
         </p>
       </header>
 
       <List>
         <Item>
-          <RoomImage src={room1} />
-          <Stars size="20" />
+          <BGImage link="/" src={room1} size="222px" />
+          <RatedStars size="20" />
           <Description>
             Os anfitriões, nos deixaram muito à vontade desde a recepção até a
             saída. Lugar agradável, limpo, com ótima infraestrutra e
@@ -56,8 +49,8 @@ export default function SectionTopReated() {
         </Item>
 
         <Item>
-          <RoomImage src={room2} />
-          <Stars size="20" />
+          <BGImage link="/" src={room2} size="222px" />
+          <RatedStars size="20" />
           <Description>
             Os anfitriões, nos deixaram muito à vontade desde a recepção até a
             saída. Lugar agradável, limpo, com ótima infraestrutra e
@@ -73,8 +66,8 @@ export default function SectionTopReated() {
         </Item>
 
         <Item>
-          <RoomImage src={room3} />
-          <Stars size="20" />
+          <BGImage link="/" src={room3} size="222px" />
+          <RatedStars size="20" />
           <Description>
             Os anfitriões, nos deixaram muito à vontade desde a recepção até a
             saída. Lugar agradável, limpo, com ótima infraestrutra e
