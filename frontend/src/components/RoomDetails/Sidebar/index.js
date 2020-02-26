@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef, memo } from 'react';
+import React, { useState, useEffect, useRef, memo, useCallback } from 'react';
 import colors from '~/styles/colors';
 import { AiFillStar, AiOutlineFlag } from 'react-icons/ai';
 import { FormGroup, FormInput } from '~/components/shared/Forms';
 import DropdownGuets from '~/components/shared/DropdownGuests';
 import Button from '~/components/shared/Button';
-import lighBulb from '~/assets/icons/light-bulb.gif';
+import lightBulb from '~/assets/icons/light-bulb.gif';
 
 import { Container, Card, Price, Form, Footer, DenounceAds } from './styles';
 
@@ -37,9 +37,9 @@ function Sidebar() {
     calcPrice();
   }, [childData]);
 
-  function handleValue(value) {
+  const getChildValue = useCallback(value => {
     setChildData(value);
-  }
+  }, []);
 
   function calcPrice() {
     const calc = (childData - 1) * 96 + initialPrice;
@@ -81,19 +81,20 @@ function Sidebar() {
             />
           </FormGroup>
 
-          <DropdownGuets parentValue={handleValue} />
+          <DropdownGuets parentValue={getChildValue} />
 
           <Button label="Reservar" onClick={() => {}} block />
           <small className="text-center block bold">
             Você ainda não será cobrado
           </small>
         </Form>
+
         <Footer>
           <div>
             <strong>Este lugar está chamando bastante atenção.</strong>
             <p>Ela recebeu mais de 500 visualizações na última semana.</p>
           </div>
-          <img src={lighBulb} />
+          <img src={lightBulb} />
         </Footer>
       </Card>
       <DenounceAds>

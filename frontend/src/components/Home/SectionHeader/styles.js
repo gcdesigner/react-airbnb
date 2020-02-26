@@ -6,6 +6,10 @@ export const Header = styled.div`
   background-size: cover;
   background-position: center;
   padding-bottom: 64px;
+
+  @media (max-width: 744px) {
+    padding-bottom: 0;
+  }
 `;
 
 export const MenuArea = styled.div`
@@ -15,6 +19,7 @@ export const MenuArea = styled.div`
   justify-content: space-between;
 
   width: 100%;
+  height: 70px;
   padding: 0 20px;
   background: transparent;
   z-index: 2;
@@ -36,10 +41,25 @@ export const MenuArea = styled.div`
       rgba(0, 212, 255, 0) 100%
     );
   }
+
+  @media (max-width: 744px) {
+    height: 60px;
+    background: #fff;
+
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 export const Logo = styled.div`
   flex: 1;
+
+  @media (max-width: 744px) {
+    svg {
+      fill: red !important;
+    }
+  }
 `;
 
 export const Menu = styled.ul`
@@ -64,5 +84,9 @@ export const Menu = styled.ul`
         border-bottom: 2px solid #fff;
       }
     }
+  }
+
+  @media (max-width: 1128px) {
+    display: none;
   }
 `;

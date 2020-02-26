@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import { Container, Image } from './styles';
 
@@ -8,9 +9,9 @@ export default function BGImage(props) {
   return (
     <Container {...props} size={size}>
       {link ? (
-        <a href={link}>
+        <Link to={link}>
           <Image src={src} bgSize={bgSize} circle={circle} />
-        </a>
+        </Link>
       ) : (
         <Image src={src} bgSize={bgSize} circle={circle} />
       )}

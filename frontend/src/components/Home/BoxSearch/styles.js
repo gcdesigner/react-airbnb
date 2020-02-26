@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  @media (max-width: 744px) {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+`;
 
 export const Card = styled.div`
   width: 508px;
@@ -13,6 +18,11 @@ export const Card = styled.div`
     font-size: 32px;
     line-height: 36px;
     margin-bottom: 20px;
+  }
+
+  @media (max-width: 744px) {
+    width: 100%;
+    border-radius: 0;
   }
 `;
 
@@ -56,5 +66,9 @@ export const Ads = styled.div`
     color: #484848;
     font-weight: 800;
     text-align: right;
+  }
+
+  @media (max-width: 744px) {
+    display: none;
   }
 `;

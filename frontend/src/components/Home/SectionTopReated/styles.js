@@ -23,16 +23,24 @@ export const Container = styled.section`
 `;
 
 export const List = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 0 -8px;
+  overflow-x: auto;
+  margin-left: -32px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 16px;
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Item = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: inline-block;
+  width: 31.8%;
+  min-width: 300px;
   margin: 0 8px;
+  overflow: hidden;
 
   svg {
     margin-top: 15px;
@@ -42,8 +50,10 @@ export const Item = styled.div`
 export const Description = styled.p`
   max-height: 56px;
   text-overflow: ellipsis;
+  white-space: normal;
   line-height: 1.3;
   margin: 15px 0;
+  overflow: hidden;
 `;
 
 export const Author = styled.div`

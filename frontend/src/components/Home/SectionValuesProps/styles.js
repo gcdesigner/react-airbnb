@@ -15,6 +15,10 @@ export const List = styled.div`
   border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
   padding: 32px 0;
+
+  @media (max-width: 744px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Item = styled.div`
@@ -27,6 +31,17 @@ export const Item = styled.div`
       display: block;
       font-size: 16px;
       margin: 15px 0 5px;
+    }
+  }
+
+  @media (max-width: 744px) {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+
+    > div {
+      padding-right: 0;
     }
   }
 `;

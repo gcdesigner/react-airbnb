@@ -15,11 +15,20 @@ export const List = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 -8px;
+
+  @media (max-width: 744px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Item = styled.div`
   width: 100%;
   margin: 0 8px;
+
+  @media (max-width: 744px) {
+    width: calc(50% - 16px);
+    margin-bottom: 20px;
+  }
 `;
 
 export const ImageRoom = styled.div`
