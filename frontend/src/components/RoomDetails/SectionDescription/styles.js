@@ -5,7 +5,7 @@ export const Container = styled.div`
   font-size: 16px;
   padding-bottom: 30px;
   border-bottom: 1px solid #ebebeb;
-  margin-bottom: 250px;
+  margin-bottom: 30px;
 
   p {
     margin-bottom: 20px;
