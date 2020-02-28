@@ -5,6 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import colors from '~/styles/colors';
 import { darken } from 'polished';
 
+import Calendar from './Calendar';
+
 import { Container, Header, MyCalendar } from './styles';
 
 export default function SectionAvailability() {
@@ -37,7 +39,9 @@ export default function SectionAvailability() {
       </Header>
 
       <MyCalendar>
-        <ThemeProvider
+        <Calendar qtdMonths={true} />
+
+        {/* <ThemeProvider
           theme={{
             breakpoints: ['32em', '48em', '64em'],
             reactDatepicker: {
@@ -74,7 +78,7 @@ export default function SectionAvailability() {
             unavailableDates={state.unDates}
             firstDayOfWeek={0}
           />
-        </ThemeProvider>
+        </ThemeProvider> */}
       </MyCalendar>
     </Container>
   );
