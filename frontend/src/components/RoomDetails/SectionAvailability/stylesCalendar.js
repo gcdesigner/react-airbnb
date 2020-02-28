@@ -16,6 +16,7 @@ export const Header = styled.div`
 
   strong {
     font-size: 20px;
+    text-transform: capitalize;
   }
 
   button {

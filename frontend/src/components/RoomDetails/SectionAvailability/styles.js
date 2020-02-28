@@ -16,4 +16,10 @@ export const Header = styled.div`
 
 export const MyCalendar = styled.div`
   padding: 20px 0 0;
+
+  > div > div > div:nth-child(2) {
+    > div {
+      top: 0;
+    }
+  }
 `;
