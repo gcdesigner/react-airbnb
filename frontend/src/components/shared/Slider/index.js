@@ -3,7 +3,7 @@ import Slider from 'infinite-react-carousel';
 
 import { Container } from './styles';
 
-export default function MySlider({ children }) {
+function MySlider({ children }) {
   const settings = {
     arrows: false,
     arrowsBlock: false,
@@ -17,3 +17,5 @@ export default function MySlider({ children }) {
     </Container>
   );
 }
+
+export default React.memo(MySlider);

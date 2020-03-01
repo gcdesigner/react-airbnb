@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Btn } from './styles';
 
-export default function Button(props) {
+function Button(props) {
   const {
     type,
     block,
@@ -27,6 +27,8 @@ export default function Button(props) {
   );
 }
 
+export default React.memo(Button);
+
 Button.propTypes = {
   type: PropTypes.string,
   level: PropTypes.string,
@@ -44,5 +46,5 @@ Button.defaultProps = {
   size: 'md',
   block: false,
   iconLeft: null,
-  iconRight: null
+  iconRight: null,
 };

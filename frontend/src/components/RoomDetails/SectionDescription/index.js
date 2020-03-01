@@ -6,7 +6,7 @@ import Observations from './Observations';
 
 import { Container } from './styles';
 
-export default function SectionDescription() {
+function SectionDescription() {
   const [showMore, setShowMore] = useState(false);
 
   function handleShowMore() {
@@ -56,3 +56,5 @@ export default function SectionDescription() {
     </Container>
   );
 }
+
+export default React.memo(SectionDescription);

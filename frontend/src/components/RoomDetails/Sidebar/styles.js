@@ -1,14 +1,19 @@
 import styled from 'styled-components';
-import colors from '~/styles/colors';
+// import colors from '~/styles/colors';
 
 export const Container = styled.div`
   position: absolute;
   width: 376px;
   top: 24px;
+  transition: all 0.5s;
 
   &.fixed {
     position: fixed;
-    top: 40px;
+    top: 80px;
+  }
+
+  @media (max-width: 744px) {
+    display: none;
   }
 `;
 

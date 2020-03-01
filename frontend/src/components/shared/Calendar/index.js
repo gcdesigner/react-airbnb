@@ -10,17 +10,17 @@ import {
   toDate,
   format,
   addMonths,
-  getMonth,
+  parseISO,
 } from 'date-fns';
 import { pt } from 'date-fns/locale';
 
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 
-import { Container, Wrapper, Header, WeekDays, Days } from './stylesCalendar';
+import { Container, Wrapper, Header, WeekDays, Days } from './styles';
 
-export default function Calendar({ qtdMonths = false }) {
+export default function Calendar({ multiple }) {
   const [date, setDate] = useState(() => {
-    if (qtdMonths) {
+    if (multiple) {
       const dates = {
         date1: new Date(),
         date2: addMonths(new Date(), 1),
@@ -37,14 +37,16 @@ export default function Calendar({ qtdMonths = false }) {
   const [datesSelected, setDatesSelected] = useState([]);
 
   const month1 = format(date.date1, 'MMMM yyyy', { locale: pt });
-  const month2 = format(date.date2, 'MMMM yyyy', { locale: pt });
+  const month2 = multiple && format(date.date2, 'MMMM yyyy', { locale: pt });
 
   const weekdays = [...Array(7).keys()].map(i =>
     pt.localize.day(i, { width: 'abbreviated' })
   );
 
+  const [daysMonth, setDaysMonth] = useState([]);
+
   function nextMonth() {
-    if (qtdMonths) {
+    if (multiple) {
       setDate({
         date1: addMonths(date.date1, 1),
         date2: addMonths(date.date2, 1),
@@ -57,7 +59,7 @@ export default function Calendar({ qtdMonths = false }) {
   }
 
   function prevMonth() {
-    if (qtdMonths) {
+    if (multiple) {
       setDate({
         date1: addMonths(date.date1, -1),
         date2: addMonths(date.date2, -1),
@@ -69,51 +71,53 @@ export default function Calendar({ qtdMonths = false }) {
     }
   }
 
-  const matrix = eachWeekOfInterval({
-    start: startOfMonth(date.date1),
-    end: endOfMonth(date.date1),
-  });
+  const matrix2 =
+    multiple &&
+    eachWeekOfInterval({
+      start: startOfMonth(date.date2),
+      end: endOfMonth(date.date2),
+    });
 
-  const matrix2 = eachWeekOfInterval({
-    start: startOfMonth(date.date2),
-    end: endOfMonth(date.date2),
-  });
+  function mountDays() {
+    const matrix = eachWeekOfInterval({
+      start: startOfMonth(date.date1),
+      end: endOfMonth(date.date1),
+    });
 
-  const arrDays = matrix.map(weekDay =>
-    eachDayOfInterval({
-      start: startOfWeek(weekDay),
-      end: endOfWeek(weekDay),
-    }).map(day =>
-      toDate(day, {
-        isSameMonth: isSameMonth(date.date1, day),
-      })
-    )
-  );
+    const days = matrix.map(weekDay =>
+      eachDayOfInterval({
+        start: startOfWeek(weekDay),
+        end: endOfWeek(weekDay),
+      }).map((day, index) => ({
+        id: format(day, 'dd MMMM yyyy'),
+        day,
+        active: false,
+      }))
+    );
 
-  const arrDays2 = matrix2.map(weekDay =>
-    eachDayOfInterval({
-      start: startOfWeek(weekDay),
-      end: endOfWeek(weekDay),
-    }).map(day =>
-      toDate(day, {
-        isSameMonth: isSameMonth(date.date2, day),
-      })
-    )
-  );
+    setDaysMonth(days);
+  }
 
-  function handleClickDay(e) {
-    // setDatesSelected([...datesSelected, format(e, 'dd MM yy')]);
-    const map = datesSelected.map(i => i);
-    const index = map.indexOf(format(e, 'dd MM yy'));
+  useEffect(() => {
+    mountDays();
+  }, [date]);
 
-    if (index !== -1) {
-      console.log('nao encontrou');
-      setDatesSelected([...datesSelected, format(e, 'dd MM yy')]);
-    } else {
-      console.log('encontrou');
-    }
+  // const arrDays2 = matrix2.map(weekDay =>
+  //   eachDayOfInterval({
+  //     start: startOfWeek(weekDay),
+  //     end: endOfWeek(weekDay),
+  //   }).map(day =>
+  //     toDate(day, {
+  //       isSameMonth: isSameMonth(date.date2, day),
+  //     })
+  //   )
+  // );
 
-    console.log(datesSelected);
+  function handleSelectDay(e) {
+    console.log(e);
+    // const arrDays = daysMonth.map(i => i.map(d => d));
+    // const findDay = arrDays.map(i => i.filter(d => d.id == dateFormated));
+    // const newArray = daysMonth.splice(findDay, 1);
   }
 
   return (
@@ -126,7 +130,7 @@ export default function Calendar({ qtdMonths = false }) {
 
           <strong>{month1}</strong>
 
-          {!qtdMonths && (
+          {!multiple && (
             <button type="button" className="nextMonth" onClick={nextMonth}>
               <FiArrowRight />
             </button>
@@ -139,15 +143,15 @@ export default function Calendar({ qtdMonths = false }) {
         </WeekDays>
         <Days>
           <tbody>
-            {arrDays.map(i => (
-              <tr key={i}>
+            {daysMonth.map((i, index) => (
+              <tr key={index}>
                 {i.map(d => (
-                  <td key={d}>
+                  <td key={d.day}>
                     <button
                       type="button"
-                      onClick={e => handleClickDay(d)}
-                      aria-label={d}>
-                      {format(d, 'dd')}
+                      onClick={e => handleSelectDay(d.day)}
+                      aria-label={d.day}>
+                      {format(d.day, 'dd')}
                     </button>
                   </td>
                 ))}
@@ -157,7 +161,7 @@ export default function Calendar({ qtdMonths = false }) {
         </Days>
       </Wrapper>
 
-      {qtdMonths && (
+      {/* {multiple && (
         <Wrapper>
           <Header>
             <strong>{month2}</strong>
@@ -186,7 +190,7 @@ export default function Calendar({ qtdMonths = false }) {
             </tbody>
           </Days>
         </Wrapper>
-      )}
+      )} */}
     </Container>
   );
 }

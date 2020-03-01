@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const Header = styled.div`
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 
   strong {
@@ -60,6 +60,14 @@ export const Days = styled.table`
     td {
       width: 100%;
       margin: 2px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       button {
         width: 100%;

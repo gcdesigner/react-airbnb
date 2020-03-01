@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Container, Wrapper, Main, Sidebar } from './styles';
 
+import Breadcrumb from '~/components/RoomDetails/Breadcrumb';
 import Header from '~/components/shared/Header';
 import GalleryHeader from '~/components/shared/GalleryHeader';
 import BookForm from '~/components/RoomDetails/Sidebar';
@@ -11,10 +12,12 @@ import SectionDescription from '~/components/RoomDetails/SectionDescription';
 import SectionConfort from '~/components/RoomDetails/SectionConfort';
 import SectionBeds from '~/components/RoomDetails/SectionBeds';
 import SectionAvailability from '~/components/RoomDetails/SectionAvailability';
+import SectionComments from '~/components/RoomDetails/SectionComments';
 
 export default function RoomDetails() {
   return (
     <Container>
+      <Breadcrumb />
       <Header />
       <GalleryHeader />
       <Wrapper>
@@ -25,6 +28,7 @@ export default function RoomDetails() {
           <SectionConfort />
           <SectionBeds />
           <SectionAvailability />
+          <SectionComments />
         </Main>
         <Sidebar>
           <BookForm />

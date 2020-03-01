@@ -6,9 +6,9 @@ import avatar from '~/assets/avatars/avatar4.jpg';
 
 import { Container, Title, Author, Avatar } from './styles';
 
-export default function SectionSummary() {
+function SectionSummary() {
   return (
-    <Container>
+    <Container id="summary">
       <Title>
         <h1>The Joshua Tree House</h1>
         <span>Joshua Tree</span>
@@ -23,3 +23,5 @@ export default function SectionSummary() {
     </Container>
   );
 }
+
+export default React.memo(SectionSummary);

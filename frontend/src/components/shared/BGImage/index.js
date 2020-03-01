@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Container, Image } from './styles';
 
-export default function BGImage(props) {
+function BGImage(props) {
   const { link, src, size, bgSize, circle } = props;
   return (
     <Container {...props} size={size}>
@@ -18,6 +18,8 @@ export default function BGImage(props) {
     </Container>
   );
 }
+
+export default React.memo(BGImage);
 
 BGImage.propTypes = {
   link: PropTypes.string,

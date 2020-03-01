@@ -4,7 +4,7 @@ import { FiHome, FiBell, FiAward, FiSmile } from 'react-icons/fi';
 
 import { Container } from './styles';
 
-export default function SectionDetails() {
+function SectionDetails() {
   return (
     <Container>
       <ul className="top">
@@ -53,3 +53,5 @@ export default function SectionDetails() {
     </Container>
   );
 }
+
+export default React.memo(SectionDetails);

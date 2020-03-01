@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AboutSpace() {
+function AboutSpace() {
   return (
     <section>
       <strong>O espaço</strong>
@@ -31,3 +31,5 @@ export default function AboutSpace() {
     </section>
   );
 }
+
+export default React.memo(AboutSpace);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Observations() {
+function Observations() {
   return (
     <section>
       <strong>Outras observações</strong>
@@ -28,3 +28,5 @@ export default function Observations() {
     </section>
   );
 }
+
+export default React.memo(Observations);

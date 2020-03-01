@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function GuestAccess() {
+function GuestAccess() {
   return (
     <section>
       <strong>Acesso dos hóspedes</strong>
@@ -12,3 +12,5 @@ export default function GuestAccess() {
     </section>
   );
 }
+
+export default React.memo(GuestAccess);

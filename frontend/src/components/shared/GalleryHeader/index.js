@@ -14,9 +14,9 @@ import room43 from '~/assets/rooms/room4-3.jpg';
 import room44 from '~/assets/rooms/room4-4.jpg';
 import room45 from '~/assets/rooms/room4-5.jpg';
 
-export default function GalleryHeader() {
+function GalleryHeader() {
   return (
-    <Container>
+    <Container id="galleryHeader">
       <ShareAndSave>
         <Button
           label="Compartilhar"
@@ -81,3 +81,5 @@ export default function GalleryHeader() {
     </Container>
   );
 }
+
+export default React.memo(GalleryHeader);

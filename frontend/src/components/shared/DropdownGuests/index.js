@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 import {
@@ -13,7 +13,7 @@ import {
   Close,
 } from './styles';
 
-export default function DropdownGuests({ parentValue }) {
+function DropdownGuests({ guests }) {
   const [toggle, setToggle] = useState(false);
   const maxGuests = 6;
   const maxBabies = 5;
@@ -25,11 +25,13 @@ export default function DropdownGuests({ parentValue }) {
     babies: 0,
   });
 
+  const dropRef = useRef();
+
   useEffect(() => {
     function sumTotalGuests() {
       const sum = counter.adults + counter.children;
       setTotalGuests(sum);
-      parentValue(sum);
+      guests(sum);
 
       if (sum === maxGuests) {
         setDisabled(true);
@@ -38,7 +40,17 @@ export default function DropdownGuests({ parentValue }) {
       }
     }
     sumTotalGuests();
-  }, [counter]);
+  }, [counter, guests]);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  function handleClickOutside(e) {
+    if (dropRef.current && !dropRef.current.contains(e.target)) {
+      setToggle(false);
+    }
+  }
 
   function handleToggle() {
     setToggle(!toggle);
@@ -61,7 +73,7 @@ export default function DropdownGuests({ parentValue }) {
   }
 
   return (
-    <Container>
+    <Container ref={dropRef}>
       <DropdownToggle className={toggle && 'show'}>
         <label>Hóspedes</label>
         <button type="button" onClick={handleToggle}>
@@ -164,3 +176,5 @@ export default function DropdownGuests({ parentValue }) {
     </Container>
   );
 }
+
+export default React.memo(DropdownGuests);
