@@ -13,6 +13,7 @@ import SectionConfort from '~/components/RoomDetails/SectionConfort';
 import SectionBeds from '~/components/RoomDetails/SectionBeds';
 import SectionAvailability from '~/components/RoomDetails/SectionAvailability';
 import SectionComments from '~/components/RoomDetails/SectionComments';
+import SectionHostProfile from '~/components/RoomDetails/SectionHostProfile';
 
 export default function RoomDetails() {
   return (
@@ -29,6 +30,7 @@ export default function RoomDetails() {
           <SectionBeds />
           <SectionAvailability />
           <SectionComments />
+          <SectionHostProfile />
         </Main>
         <Sidebar>
           <BookForm />
