@@ -58,17 +58,21 @@ function Breadcrumb() {
               <li>
                 <button
                   type="button"
-                  onClick={e => handleScrollTo('aboutProp')}>
+                  onClick={e => handleScrollTo('hostProfile')}>
                   O anfitrião
                 </button>
               </li>
               <li>
-                <button type="button" onClick={e => handleScrollTo('address')}>
+                <button
+                  type="button"
+                  onClick={e => handleScrollTo('neighborhood')}>
                   Endereço
                 </button>
               </li>
               <li>
-                <button type="button" onClick={e => handleScrollTo('politics')}>
+                <button
+                  type="button"
+                  onClick={e => handleScrollTo('thingsToRemember')}>
                   Políticas
                 </button>
               </li>

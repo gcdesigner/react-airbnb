@@ -1,15 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   font-size: 16px;
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid #ebebeb;
-`;
-
-export const Header = styled.strong`
-  display: block;
-  margin-bottom: 20px;
 `;
 
 export const List = styled.div`

@@ -4,12 +4,20 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: absolute;
   width: 376px;
-  top: 24px;
-  transition: all 0.5s;
+  top: 0;
+  transition: all 0.2s;
 
   &.fixed {
     position: fixed;
     top: 80px;
+    transition: all 0.5s;
+  }
+
+  &.absolute {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    transition: all 0.5s;
   }
 
   @media (max-width: 744px) {

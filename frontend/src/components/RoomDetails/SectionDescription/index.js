@@ -14,7 +14,7 @@ function SectionDescription() {
   }
 
   return (
-    <Container>
+    <Container id="roomDescription">
       <div className="translate">
         <button type="button" onClick={() => {}}>
           Traduzir esta descrição para Português

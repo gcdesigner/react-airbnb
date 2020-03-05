@@ -6,7 +6,7 @@ import { Container } from './styles';
 
 function SectionDetails() {
   return (
-    <Container>
+    <Container id="roomDetails">
       <ul className="top">
         <li>6 hóspedes</li>
         <li>2 quartos</li>

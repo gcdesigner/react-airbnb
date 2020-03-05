@@ -3,12 +3,12 @@ import { FaToiletPaper } from 'react-icons/fa';
 import { FiThermometer } from 'react-icons/fi';
 import { GiFireplace, GiHotSurface } from 'react-icons/gi';
 
-import { Container, Header, List, Item, ShowAll } from './styles';
+import { Container, List, Item, ShowAll } from './styles';
 
 export default function SectionConfort() {
   return (
     <Container>
-      <Header>Comodidades</Header>
+      <h3>Comodidades</h3>
       <List>
         <Item>
           <FaToiletPaper />

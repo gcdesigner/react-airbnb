@@ -7,9 +7,9 @@ const divider = {
   marginBottom: '20px',
 };
 
-export const Container = styled.div`
+export const Container = styled.section`
   font-size: 16px;
-  margin-bottom: 150px;
+  margin-bottom: 40px;
 `;
 
 export const Header = styled.div`
@@ -76,5 +76,42 @@ export const About = styled.div`
     border-radius: 3px;
     padding: 7px 15px;
     font-weight: 600;
+  }
+`;
+
+export const AlertAirbnb = styled.div`
+  ${divider};
+`;
+
+export const AboutThisPlace = styled.div`
+  ${divider};
+
+  > strong {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  > p {
+    margin-bottom: 20px;
+  }
+`;
+
+export const AboutTheHost = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 -20px;
+
+  > div {
+    width: calc(33.3% - 10px);
+    font-size: 16px;
+    color: #484848;
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+    span {
+      display: block;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
   }
 `;

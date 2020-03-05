@@ -1,12 +1,12 @@
 import React from 'react';
 import SVGBedQueen from '~/assets/icons/bed-queen';
 
-import { Container, Header, List, Item } from './styles';
+import { Container, List, Item } from './styles';
 
 export default function SectionBeds() {
   return (
     <Container>
-      <Header>Tipos de cama</Header>
+      <h3>Tipos de cama</h3>
       <List>
         <Item>
           <SVGBedQueen />

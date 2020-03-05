@@ -15,6 +15,34 @@ import room44 from '~/assets/rooms/room4-4.jpg';
 import room45 from '~/assets/rooms/room4-5.jpg';
 
 function GalleryHeader() {
+  const images = [
+    {
+      id: '0',
+      image: room4,
+      alt: 'imagem 1',
+    },
+    {
+      id: '1',
+      image: room42,
+      alt: 'imagem 2',
+    },
+    {
+      id: '2',
+      image: room43,
+      alt: 'imagem 3',
+    },
+    {
+      id: '3',
+      image: room44,
+      alt: 'imagem 4',
+    },
+    {
+      id: '4',
+      image: room45,
+      alt: 'imagem 5',
+    },
+  ];
+
   return (
     <Container id="galleryHeader">
       <ShareAndSave>
@@ -34,45 +62,26 @@ function GalleryHeader() {
       <List>
         {window.innerWidth <= 744 ? (
           <Slider>
-            <BGImage
-              src={room4}
-              size={['70vw', '100%']}
-              bgSize="contain"
-              className="img first"
-            />
-            <BGImage
-              src={room42}
-              size={['70vw']}
-              bgSize="contain"
-              className="img"
-            />
-            <BGImage
-              src={room43}
-              size={['70vw']}
-              bgSize="contain"
-              className="img"
-            />
-            <BGImage
-              src={room44}
-              size={['70vw']}
-              bgSize="contain"
-              className="img"
-            />
-            <BGImage
-              src={room45}
-              size={['70vw']}
-              bgSize="contain"
-              className="img"
-            />
+            {images.map(image => (
+              <BGImage
+                key={image.id}
+                src={image.image}
+                size={['70vw', '100%']}
+                bgSize="contain"
+                className={('img', image.id === 0 && 'first')}
+                alt={image.alt}
+              />
+            ))}
           </Slider>
         ) : (
           <>
-            <BGImage src={room4} className="first" />
+            <BGImage src={images[0].image} className="first" />
             <div className="col-right">
-              <BGImage src={room42} />
-              <BGImage src={room43} />
-              <BGImage src={room44} />
-              <BGImage src={room45} />
+              {images
+                .filter((_, index) => index > 0)
+                .map((img, index) => (
+                  <BGImage key={index} src={img.image} />
+                ))}
             </div>
           </>
         )}

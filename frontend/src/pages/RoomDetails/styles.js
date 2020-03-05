@@ -1,7 +1,22 @@
 import styled from 'styled-components';
 import Content from '~/components/shared/Content';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  font-size: 16px;
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h2,
+  h3 {
+    margin-bottom: 20px;
+  }
+`;
 
 export const Wrapper = styled(Content)`
   display: flex;

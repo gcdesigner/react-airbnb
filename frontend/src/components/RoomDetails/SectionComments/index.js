@@ -3,7 +3,6 @@ import colors from '~/styles/colors';
 import { FiSearch, FiChevronRight } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
 import BGImage from '~/components/shared/BGImage';
-import avatar1 from '~/assets/avatars/avatar1.jpg';
 
 import commentsapi from './comments.json';
 
@@ -29,9 +28,9 @@ export default function SectionComments() {
   }, []);
 
   return (
-    <Container>
+    <Container id="comments">
       <Header>
-        <strong>Comentários</strong>
+        <h2>Comentários</h2>
         <div>
           <div className="qtd-comments">
             <div className="rate">
@@ -101,7 +100,7 @@ export default function SectionComments() {
 
       <ListComments>
         {comments.map(comment => (
-          <Comment>
+          <Comment key={comment.id}>
             <header>
               <BGImage src={comment.avatar} size={['45px', '45px']} circle />
               <div className="meta">

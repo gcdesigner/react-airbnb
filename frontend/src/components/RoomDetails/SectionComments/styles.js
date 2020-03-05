@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '~/styles/colors';
 
-export const Container = styled.div`
+export const Container = styled.section`
   font-size: 16px;
   margin-bottom: 70px;
 `;
@@ -10,12 +10,6 @@ export const Header = styled.div`
   padding-bottom: 16px;
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 16px;
-
-  > strong {
-    display: block;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
 
   div {
     display: flex;

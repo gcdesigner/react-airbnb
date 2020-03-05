@@ -3,7 +3,7 @@ import React from 'react';
 function AboutSpace() {
   return (
     <section>
-      <strong>O espaço</strong>
+      <h3>O espaço</h3>
       <p>
         This house is very close to downtown Joshua Tree with many shops and
         restaurants about a 10 minute walk from the house. This also means that

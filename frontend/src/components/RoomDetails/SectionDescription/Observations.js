@@ -3,7 +3,7 @@ import React from 'react';
 function Observations() {
   return (
     <section>
-      <strong>Outras observações</strong>
+      <h3>Outras observações</h3>
       <p>
         Our driveway wraps around the back of house, so feel free to circle
         around the driveway rather than backing out.{' '}

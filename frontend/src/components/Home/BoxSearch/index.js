@@ -59,7 +59,7 @@ export default function HomeBoxSearch() {
               onChange={() => {}}
             />
             <FormInput
-              label="CHECK-OUT"
+              label="CHECKOUT"
               id="checkout"
               value=""
               placeholder="dd/mm/aaa"

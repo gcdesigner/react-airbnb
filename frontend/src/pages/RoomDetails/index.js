@@ -14,6 +14,11 @@ import SectionBeds from '~/components/RoomDetails/SectionBeds';
 import SectionAvailability from '~/components/RoomDetails/SectionAvailability';
 import SectionComments from '~/components/RoomDetails/SectionComments';
 import SectionHostProfile from '~/components/RoomDetails/SectionHostProfile';
+import SectionNeighborhood from '~/components/RoomDetails/SectionNeighborhood';
+import SectionThingsToRemember from '~/components/RoomDetails/SectionThingsToRemember';
+
+import SimilarListings from '~/components/shared/SimilarListings';
+import Footer from '~/components/shared/Footer';
 
 export default function RoomDetails() {
   return (
@@ -22,7 +27,7 @@ export default function RoomDetails() {
       <Header />
       <GalleryHeader />
       <Wrapper>
-        <Main>
+        <Main id="main">
           <SectionSummary />
           <SectionDetails />
           <SectionDescription />
@@ -31,11 +36,17 @@ export default function RoomDetails() {
           <SectionAvailability />
           <SectionComments />
           <SectionHostProfile />
+          <SectionNeighborhood />
+          <SectionThingsToRemember />
         </Main>
-        <Sidebar>
+        <Sidebar id="sidebar">
           <BookForm />
         </Sidebar>
       </Wrapper>
+
+      <SimilarListings />
+
+      <Footer />
     </Container>
   );
 }

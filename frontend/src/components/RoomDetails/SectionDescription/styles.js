@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '~/styles/colors';
 
-export const Container = styled.div`
+export const Container = styled.section`
   font-size: 16px;
   padding-bottom: 30px;
   border-bottom: 1px solid #ebebeb;

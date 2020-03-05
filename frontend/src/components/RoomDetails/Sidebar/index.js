@@ -14,9 +14,13 @@ function Sidebar() {
   const [checkin, setCheckin] = useState('');
   const [checkout, setCheckout] = useState('');
 
-  const [offset, setOffset] = useState(1);
+  const [offset, setOffset] = useState({
+    top: 1,
+    bottom: 1,
+  });
   const [scroll, setScroll] = useState(0);
-  const [visible, setVisible] = useState(false);
+  const [fixe, setFixe] = useState(false);
+  const [absolute, setAbsolute] = useState(false);
 
   var formatter = new Intl.NumberFormat('pt-br', {
     style: 'currency',
@@ -25,10 +29,20 @@ function Sidebar() {
 
   useEffect(() => {
     function handleOffset() {
-      const heightHeader = document.getElementById('headerNavbar').offsetHeight;
-      const heightGallery = document.getElementById('galleryHeader')
+      const offsetTop = document.getElementById('sidebar').offsetTop;
+
+      const rootHeight = document.getElementById('root').offsetHeight;
+      const offsetListings = document.getElementById('similarListings')
         .offsetHeight;
-      setOffset(heightHeader + heightGallery);
+      const offsetFooter = document.getElementById('footer').offsetHeight;
+
+      const footerHeight = offsetFooter + offsetListings;
+      const offsetBottom = rootHeight - footerHeight;
+
+      setOffset({
+        top: offsetTop - 10,
+        bottom: offsetBottom + 470,
+      });
     }
 
     handleOffset();
@@ -40,7 +54,9 @@ function Sidebar() {
         setScroll(this.scrollY);
       });
 
-      scroll >= offset ? setVisible(true) : setVisible(false);
+      scroll >= offset.top ? setFixe(true) : setFixe(false);
+
+      scroll >= offset.bottom ? setAbsolute(true) : setAbsolute(false);
     }
     handleScroll();
   }, [scroll, offset]);
@@ -59,7 +75,9 @@ function Sidebar() {
   );
 
   return (
-    <Container className={visible && 'fixed'}>
+    <Container
+      id="bookSidebar"
+      className={(absolute && 'absolute') || (fixe && 'fixed')}>
       <Card>
         <Price>
           <div className="price">

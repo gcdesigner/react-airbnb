@@ -4,13 +4,10 @@ import {
   eachDayOfInterval,
   startOfMonth,
   endOfMonth,
-  isSameMonth,
   startOfWeek,
   endOfWeek,
-  toDate,
   format,
   addMonths,
-  parseISO,
 } from 'date-fns';
 import { pt } from 'date-fns/locale';
 
@@ -34,10 +31,8 @@ export default function Calendar({ multiple }) {
     }
   });
 
-  const [datesSelected, setDatesSelected] = useState([]);
-
   const month1 = format(date.date1, 'MMMM yyyy', { locale: pt });
-  const month2 = multiple && format(date.date2, 'MMMM yyyy', { locale: pt });
+  // const month2 = multiple && format(date.date2, 'MMMM yyyy', { locale: pt });
 
   const weekdays = [...Array(7).keys()].map(i =>
     pt.localize.day(i, { width: 'abbreviated' })
@@ -71,12 +66,12 @@ export default function Calendar({ multiple }) {
     }
   }
 
-  const matrix2 =
-    multiple &&
-    eachWeekOfInterval({
-      start: startOfMonth(date.date2),
-      end: endOfMonth(date.date2),
-    });
+  // const matrix2 =
+  //   multiple &&
+  //   eachWeekOfInterval({
+  //     start: startOfMonth(date.date2),
+  //     end: endOfMonth(date.date2),
+  //   });
 
   function mountDays() {
     const matrix = eachWeekOfInterval({

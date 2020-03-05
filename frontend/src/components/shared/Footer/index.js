@@ -7,7 +7,7 @@ import { Container, Wrapper, Widget, Social, CopyRight } from './styles';
 
 function Footer() {
   return (
-    <Container>
+    <Container id="footer">
       <Content>
         <Wrapper>
           <Widget>

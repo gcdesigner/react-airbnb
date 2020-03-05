@@ -4,16 +4,23 @@ import { IoMdMan } from 'react-icons/io';
 import { GoVerified } from 'react-icons/go';
 import SVGMendal from '~/assets/icons/medal';
 import BGImage from '~/components/shared/BGImage';
-import Button from '~/components/shared/Button';
 import avatar from '~/assets/avatars/avatar4.jpg';
 
-import { Container, Header, SuperHost, About } from './styles';
+import {
+  Container,
+  Header,
+  SuperHost,
+  About,
+  AlertAirbnb,
+  AboutTheHost,
+  AboutThisPlace,
+} from './styles';
 
 export default function SectionHostProfile() {
   return (
-    <Container>
+    <Container id="hostProfile">
       <Header>
-        <div class="meta">
+        <div className="meta">
           <h2>Hospedado por Sara & Rich</h2>
           <p>Joshua Tree, Califórnia · Cadastrou-se em junho de 2010</p>
           <div>
@@ -79,6 +86,33 @@ export default function SectionHostProfile() {
           Fale com o anfitrião
         </button>
       </About>
+
+      <AlertAirbnb>
+        <p>
+          <strong>Sempre se comunique através do Airbnb &#183;</strong>
+          Para proteger seu pagamento, nunca transfira dinheiro ou se comunique
+          fora do site ou aplicativo do Airbnb.
+          <a href="/">Saiba mais</a>
+        </p>
+      </AlertAirbnb>
+
+      <AboutThisPlace>
+        <strong>Sobre este lugar</strong>
+        <p>
+          Quando você fica em um Airbnb, está se hospedando no espaço de alguém.
+        </p>
+
+        <AboutTheHost>
+          <div>
+            <span>Este é o lar de Sara & Rich.</span>
+            <BGImage src={avatar} size={['45px', '45px']} circle />
+          </div>
+          <div>
+            <span>Geneva ajuda na hospedagem.</span>
+            <BGImage src={avatar} size={['45px', '45px']} circle />
+          </div>
+        </AboutTheHost>
+      </AboutThisPlace>
     </Container>
   );
 }

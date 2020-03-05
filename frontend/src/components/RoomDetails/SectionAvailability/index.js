@@ -8,7 +8,7 @@ function SectionAvailability() {
   return (
     <Container>
       <Header>
-        <strong>Disponibilidade</strong>
+        <h3>Disponibilidade</h3>
         <p>
           Insira as datas da sua viagem para conhecer os preços e
           disponibilidade exatos
