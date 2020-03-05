@@ -13,8 +13,8 @@ export default function RecommendedRooms() {
   const [nav, setNav] = useState(0);
 
   function handleSlide(event) {
-    if (event == 'prev') {
-      if (!nav == 0) {
+    if (event === 'prev') {
+      if (!nav === 0) {
         const calc = nav - 33.3;
         setNav(calc);
       }

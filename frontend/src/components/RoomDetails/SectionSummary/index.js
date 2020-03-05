@@ -16,7 +16,7 @@ function SectionSummary() {
       <Author>
         <Avatar>
           <BGImage src={avatar} size={['64px', '64px']} circle />
-          <SVGMedal size="35" />
+          <SVGMedal size={35} />
         </Avatar>
         <span>Sara & Rich</span>
       </Author>

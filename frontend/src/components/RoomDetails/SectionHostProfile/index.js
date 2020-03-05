@@ -41,7 +41,7 @@ export default function SectionHostProfile() {
           anfitriões experientes e muito bem avaliados que se empenham ao máximo
           para proporcionar estadias excelentes para os hóspedes.
         </p>
-        <SVGMendal size="40" />
+        <SVGMendal size={40} />
       </SuperHost>
 
       <About>

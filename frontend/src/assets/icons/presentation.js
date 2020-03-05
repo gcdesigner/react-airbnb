@@ -7,7 +7,7 @@ export default function SVGPresentation({ size = 24, color = '#60B6B5' }) {
       role="presentation"
       aria-hidden="true"
       focusable="false"
-      style={{ height: size, width: size, display: 'block', fill: color }}>
+      style={{ height: size, width: size, fill: color }}>
       <path d="m9 10h11a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2-2v-5a2 2 0 0 1 2-2zm9.78 4.08a.5.5 0 0 0 -.69.14l-1 1.5a.5.5 0 0 0 .83.56l.01-.01 1-1.5a.5.5 0 0 0 -.14-.69zm-3.78-1.58a.5.5 0 0 0 -.5.5v2a .5.5 0 0 0 1 0v-2a .5.5 0 0 0 -.5-.5zm-3.02.88a.5.5 0 1 0 -.97.25l.5 1.94a.5.5 0 0 0 .97-.25z"></path>
       <path
         d="m3.5 2h9.5a2 2 0 0 1 2 2v2.5a2 2 0 0 1 -2 2h-9.5a2 2 0 0 1 -2-2v-2.5a2 2 0 0 1 2-2zm8.42 5.28 1-1.5a.5.5 0 0 0 -.83-.56l-.01.01-1 1.5a.5.5 0 0 0 .83.56zm-2.42-1.28v-2a .5.5 0 0 0 -1 0v2a .5.5 0 0 0 1 0zm-3.38.93a.5.5 0 0 0 .36-.61l-.5-1.94a.5.5 0 0 0 -.97.25l.5 1.94a.5.5 0 0 0 .61.36z"

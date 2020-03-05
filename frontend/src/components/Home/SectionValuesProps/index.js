@@ -14,7 +14,7 @@ export default function SectionValuesProps() {
       </header>
       <List>
         <Item>
-          <SVGPresentation size="40" />
+          <SVGPresentation size={40} />
           <div>
             <strong>Atendimento ao cliente 24h</strong>
             <p>
@@ -25,7 +25,7 @@ export default function SectionValuesProps() {
         </Item>
 
         <Item>
-          <SVGHouse size="40" />
+          <SVGHouse size={40} />
           <div>
             <strong>Padrões de hospitalidade globais</strong>
             <p>
@@ -38,7 +38,7 @@ export default function SectionValuesProps() {
         </Item>
 
         <Item>
-          <SVGStar size="40" color="#60B6B5" />
+          <SVGStar size={40} color="#60B6B5" />
           <div>
             <strong>Atendimento ao cliente 24h</strong>
             <p>

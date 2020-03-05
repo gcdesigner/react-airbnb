@@ -30,7 +30,7 @@ function NavMobile(props) {
             <span>Idioma</span>
             <small>Portugues (BR)</small>
           </a>
-          <SVGGlobe size="25" />
+          <SVGGlobe size={25} />
         </li>
         <li>
           <a href="/">
@@ -46,7 +46,7 @@ function NavMobile(props) {
               Ganhe até <strong>R$3.234 por mes</strong>
             </small>
           </a>
-          <SVGHousePeople size="40" />
+          <SVGHousePeople size={40} />
         </li>
         <li>
           <a href="/">Saiba tudo sobre hospedagem no Airbnb</a>
