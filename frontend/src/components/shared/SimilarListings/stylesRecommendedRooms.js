@@ -14,6 +14,10 @@ export const Wrapper = styled.div`
     transform: translateY(-50%);
     z-index: 33;
 
+    &:disabled {
+      display: none;
+    }
+
     &.prev {
       left: -40px;
     }
@@ -38,8 +42,16 @@ export const List = styled.div`
 `;
 
 export const Item = styled.div`
-  min-width: calc(33.3%);
+  min-width: 100%;
   padding: 0 8px;
+
+  @media (min-width: 744px) {
+    min-width: 50%;
+  }
+
+  @media (min-width: 1128px) {
+    min-width: 33.3%;
+  }
 
   .meta {
     margin-top: 16px;
@@ -70,6 +82,9 @@ export const Item = styled.div`
 
     .title {
       display: block;
+      white-space: pre;
+      text-overflow: ellipsis;
+      overflow: hidden;
       padding: 2px 0;
     }
 

@@ -28,6 +28,10 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     width: 1080px;
+
+    @media (max-width: 744px) {
+      overflow-x: auto;
+    }
   }
 `;
 
@@ -36,11 +40,27 @@ export const Nav = styled.ul`
   display: flex;
   align-items: center;
 
+  @media (max-width: 744px) {
+    margin-left: -24px;
+    margin-right: -24px;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
   li {
     position: relative;
     height: 50px;
     line-height: 50px;
     margin-right: 16px;
+
+    @media (max-width: 744px) {
+      &:first-child {
+        padding-left: 24px;
+      }
+      &:last-child {
+        padding-right: 24px;
+      }
+    }
 
     &::after {
       content: '';
@@ -83,6 +103,10 @@ export const Actions = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1128px) {
+    display: none;
+  }
 
   button {
     display: flex;

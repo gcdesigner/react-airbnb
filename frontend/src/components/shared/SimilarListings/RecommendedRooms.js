@@ -1,26 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaStar } from 'react-icons/fa';
 import BGImage from '~/components/shared/BGImage';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
-import roomImage from '~/assets/rooms/room2.jpg';
-import roomImage2 from '~/assets/rooms/room3.jpg';
-import roomImage3 from '~/assets/rooms/room4.jpg';
+import roomsapi from './recommendedRooms.json';
 
 import { Container, Wrapper, List, Item } from './stylesRecommendedRooms';
 
 export default function RecommendedRooms() {
-  const [nav, setNav] = useState(0);
+  const itemRef = useRef();
+  const listRef = useRef();
 
-  function handleSlide(event) {
-    if (event === 'prev') {
-      if (!nav === 0) {
-        const calc = nav - 33.3;
-        setNav(calc);
-      }
-    } else {
-      const calc = nav + 33.3;
-      setNav(calc);
+  const [navPos, setNavPos] = useState(0);
+  const [rooms, setRooms] = useState([]);
+  const [disabledPrev, setDisabledPrev] = useState(true);
+  const [disabledNext, setDisabledNext] = useState(false);
+
+  useEffect(() => {
+    setRooms(roomsapi);
+  }, [rooms]);
+
+  function handleSlideNext() {
+    const listWidth = listRef.current.offsetWidth - 1;
+    const itemWidth = itemRef.current.offsetWidth;
+    const calc = navPos + itemWidth;
+    setNavPos(calc);
+
+    if (calc > 0 && calc < listWidth) {
+      setDisabledPrev(false);
+    }
+
+    if (calc >= listWidth) {
+      setDisabledNext(true);
+      setDisabledPrev(false);
+    }
+  }
+
+  function handleSlidePrev() {
+    const itemWidth = itemRef.current.offsetWidth;
+    const calc = navPos - itemWidth;
+    setNavPos(calc);
+
+    if (calc <= 0) {
+      setDisabledPrev(true);
+    }
+
+    if (calc > 0) {
+      setDisabledPrev(false);
+      setDisabledNext(false);
     }
   }
 
@@ -31,137 +58,43 @@ export default function RecommendedRooms() {
         <button
           type="button"
           className="prev"
-          onClick={e => handleSlide('prev')}>
-          <FiChevronLeft />
+          onClick={e => handleSlidePrev()}
+          disabled={disabledPrev}>
+          <FiChevronLeft color="#bbb" />
         </button>
         <button
           type="button"
           className="next"
-          onClick={e => handleSlide('next')}>
-          <FiChevronRight />
+          onClick={e => handleSlideNext()}
+          disabled={disabledNext}>
+          <FiChevronRight color="#bbb" />
         </button>
 
         <List>
-          <div style={{ transform: `translateX(-${nav}%)` }}>
-            <Item>
-              <BGImage src={roomImage} size={['222px']} />
+          <div ref={listRef} style={{ transform: `translateX(-${navPos}px)` }}>
+            {rooms.map(room => (
+              <Item ref={itemRef} key={room.id}>
+                <BGImage src={room.image} size={['222px']} />
 
-              <div className="meta">
-                <div className="type-rate">
-                  <small className="type">Bangalô inteiro &#183; 2 camas</small>
-                  <div className="rate">
-                    <FaStar size="12" color="red" />
-                    <small>4,92 </small>
-                    <small>(135)</small>
+                <div className="meta">
+                  <div className="type-rate">
+                    <small className="type">
+                      {room.type} &#183; {room.beds} camas
+                    </small>
+                    <div className="rate">
+                      <FaStar size="12" color="red" />
+                      <small>{room.rate} </small>
+                      <small>({room.comments})</small>
+                    </div>
                   </div>
+
+                  <span className="title">{room.title}</span>
+                  <span className="price">
+                    <strong>R$ {room.price}</strong>/noite
+                  </span>
                 </div>
-
-                <span className="title">JT Artist Retreat 1 mile to JTNP</span>
-                <span className="price">
-                  <strong>R$ 713</strong>/noite
-                </span>
-              </div>
-            </Item>
-
-            <Item>
-              <BGImage src={roomImage2} size={['222px']} />
-
-              <div className="meta">
-                <div className="type-rate">
-                  <small className="type">Bangalô inteiro &#183; 2 camas</small>
-                  <div className="rate">
-                    <FaStar size="12" color="red" />
-                    <small>4,92 </small>
-                    <small>(135)</small>
-                  </div>
-                </div>
-
-                <span className="title">JT Artist Retreat 1 mile to JTNP</span>
-                <span className="price">
-                  <strong>R$ 713</strong>/noite
-                </span>
-              </div>
-            </Item>
-
-            <Item>
-              <BGImage src={roomImage3} size={['222px']} />
-
-              <div className="meta">
-                <div className="type-rate">
-                  <small className="type">Bangalô inteiro &#183; 2 camas</small>
-                  <div className="rate">
-                    <FaStar size="12" color="red" />
-                    <small>4,92 </small>
-                    <small>(135)</small>
-                  </div>
-                </div>
-
-                <span className="title">JT Artist Retreat 1 mile to JTNP</span>
-                <span className="price">
-                  <strong>R$ 713</strong>/noite
-                </span>
-              </div>
-            </Item>
-
-            <Item>
-              <BGImage src={roomImage3} size={['222px']} />
-
-              <div className="meta">
-                <div className="type-rate">
-                  <small className="type">Bangalô inteiro &#183; 2 camas</small>
-                  <div className="rate">
-                    <FaStar size="12" color="red" />
-                    <small>4,92 </small>
-                    <small>(135)</small>
-                  </div>
-                </div>
-
-                <span className="title">JT Artist Retreat 1 mile to JTNP</span>
-                <span className="price">
-                  <strong>R$ 713</strong>/noite
-                </span>
-              </div>
-            </Item>
-
-            <Item>
-              <BGImage src={roomImage3} size={['222px']} />
-
-              <div className="meta">
-                <div className="type-rate">
-                  <small className="type">Bangalô inteiro &#183; 2 camas</small>
-                  <div className="rate">
-                    <FaStar size="12" color="red" />
-                    <small>4,92 </small>
-                    <small>(135)</small>
-                  </div>
-                </div>
-
-                <span className="title">JT Artist Retreat 1 mile to JTNP</span>
-                <span className="price">
-                  <strong>R$ 713</strong>/noite
-                </span>
-              </div>
-            </Item>
-
-            <Item>
-              <BGImage src={roomImage3} size={['222px']} />
-
-              <div className="meta">
-                <div className="type-rate">
-                  <small className="type">Bangalô inteiro &#183; 2 camas</small>
-                  <div className="rate">
-                    <FaStar size="12" color="red" />
-                    <small>4,92 </small>
-                    <small>(135)</small>
-                  </div>
-                </div>
-
-                <span className="title">JT Artist Retreat 1 mile to JTNP</span>
-                <span className="price">
-                  <strong>R$ 713</strong>/noite
-                </span>
-              </div>
-            </Item>
+              </Item>
+            ))}
           </div>
         </List>
       </Wrapper>
