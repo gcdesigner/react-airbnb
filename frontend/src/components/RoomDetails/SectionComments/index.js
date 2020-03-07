@@ -102,7 +102,7 @@ export default function SectionComments() {
         {comments.map(comment => (
           <Comment key={comment.id}>
             <header>
-              <BGImage src={comment.avatar} size={['45px', '45px']} circle />
+              <BGImage image={comment.avatar} size={['45px', '45px']} circle />
               <div className="meta">
                 <strong>{comment.name}</strong>
                 <small>{comment.date}</small>

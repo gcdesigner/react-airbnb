@@ -30,6 +30,10 @@ export const Card = styled.div`
   border: 1px solid #ebebeb;
   padding: 20px;
   border-radius: 2px;
+
+  .btn-primary {
+    margin: 20px 0 10px;
+  }
 `;
 
 export const Price = styled.div`
@@ -56,18 +60,6 @@ export const Price = styled.div`
 
     span {
       color: #767676;
-    }
-  }
-`;
-
-export const Form = styled.form`
-  .btn-primary {
-    margin: 20px 0 10px;
-
-    + span {
-      width: 100%;
-      text-align: center;
-      font-weight: 600;
     }
   }
 `;

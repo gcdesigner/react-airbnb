@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 import { Container, Image } from './styles';
 
 function BGImage(props) {
-  const { link, src, size, bgSize, circle } = props;
+  const { link, image, size, bgSize, circle } = props;
   return (
-    <Container {...props} size={size}>
+    <Container size={size} circle={circle}>
       {link ? (
         <Link to={link}>
-          <Image src={src} bgSize={bgSize} circle={circle} />
+          <Image style={{ backgroundImage: `url(${image})` }} bgSize={bgSize} />
         </Link>
       ) : (
-        <Image src={src} bgSize={bgSize} circle={circle} />
+        <Image style={{ backgroundImage: `url(${image})` }} bgSize={bgSize} />
       )}
     </Container>
   );
@@ -23,7 +23,7 @@ export default React.memo(BGImage);
 
 BGImage.propTypes = {
   link: PropTypes.string,
-  src: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   size: PropTypes.array,
   bgSize: PropTypes.string,
   circle: PropTypes.bool,

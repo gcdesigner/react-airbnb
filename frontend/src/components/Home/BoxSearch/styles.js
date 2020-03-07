@@ -20,9 +20,15 @@ export const Card = styled.div`
     margin-bottom: 20px;
   }
 
+  select {
+    font-weight: normal;
+  }
+
   @media (max-width: 744px) {
     width: 100%;
+    padding: 32px 24px;
     border-radius: 0;
+    margin-bottom: 0;
   }
 `;
 
@@ -69,6 +75,30 @@ export const Ads = styled.div`
   }
 
   @media (max-width: 744px) {
-    display: none;
+    width: calc(100% - 48px);
+    border-radius: 0;
+    border: 1px solid #ebebeb;
+    border-right: 0;
+    border-left: 0;
+    padding: 30px 0;
+    margin: 0 auto;
+
+    > div {
+      justify-content: flex-start;
+      font-size: 16px;
+
+      &:first-child {
+        border-right: 0;
+      }
+
+      &:last-child {
+        width: 50px;
+        flex: 0;
+
+        span {
+          display: none;
+        }
+      }
+    }
   }
 `;

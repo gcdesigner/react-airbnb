@@ -25,6 +25,10 @@ export const Wrapper = styled.div`
     &.next {
       right: -40px;
     }
+
+    @media (max-width: 744px) {
+      display: none;
+    }
   }
 `;
 
@@ -39,11 +43,27 @@ export const List = styled.div`
     justify-content: space-between;
     transition: all 0.5s;
   }
+
+  @media (max-width: 744px) {
+    margin: 0 -24px;
+
+    > div {
+      overflow-x: auto;
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
 `;
 
 export const Item = styled.div`
   min-width: 100%;
   padding: 0 8px;
+
+  @media (max-width: 744px) {
+    padding: 0 24px;
+  }
 
   @media (min-width: 744px) {
     min-width: 50%;

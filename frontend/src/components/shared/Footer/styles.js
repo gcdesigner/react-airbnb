@@ -10,6 +10,10 @@ export const Container = styled.footer`
 export const Wrapper = styled.div`
   display: flex;
   padding: 50px 0 20px;
+
+  @media (max-width: 744px) {
+    display: none;
+  }
 `;
 
 export const Widget = styled.div`
@@ -31,7 +35,7 @@ export const Widget = styled.div`
     }
 
     span {
-      background: ${shade(.2, colors.secondary)};
+      background: ${shade(0.2, colors.secondary)};
       border-radius: 4px;
       color: #fff;
       font-weight: 600;
@@ -59,5 +63,10 @@ export const CopyRight = styled.div`
 
   svg {
     margin-right: 10px;
+  }
+
+  @media (max-width: 744px) {
+    border-top: 0;
+    padding-top: 40px;
   }
 `;

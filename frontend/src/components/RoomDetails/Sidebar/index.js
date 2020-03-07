@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import colors from '~/styles/colors';
 import { AiFillStar, AiOutlineFlag } from 'react-icons/ai';
-import { FormGroup, FormInput } from '~/components/shared/Forms';
+
+import Form from '~/components/shared/Forms/Form';
+import Input from '~/components/shared/Forms/Input';
+import InputGroup from '~/components/shared/Forms/InputGroup';
+
 import DropdownGuets from '~/components/shared/DropdownGuests';
 import Button from '~/components/shared/Button';
 import lightBulb from '~/assets/icons/light-bulb.gif';
 
-import { Container, Card, Price, Form, Footer, DenounceAds } from './styles';
+import { Container, Card, Price, Footer, DenounceAds } from './styles';
 
 function Sidebar() {
   const initialPrice = 1269;
@@ -92,23 +96,23 @@ function Sidebar() {
         </Price>
 
         <Form>
-          <FormGroup>
-            <FormInput
+          <InputGroup>
+            <Input
               label="Datas"
-              id="check-in"
+              name="check-in"
               placeholder="Checkin"
               value={checkin}
               onChange={e => setCheckin(e.target.value)}
             />
-            <FormInput
+            <Input
               label="checkout"
               hideLabel
-              id="checkout"
+              name="checkout"
               placeholder="Checkout"
               value={checkout}
               onChange={e => setCheckout(e.target.value)}
             />
-          </FormGroup>
+          </InputGroup>
 
           <DropdownGuets guests={calcPriceOnChange} />
 

@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const Image = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url(${props => props.src});
+  /* background-image: url(${props => props.image}); */
   background-size: ${props => props.bgSize};
   background-position: center;
   background-repeat: no-repeat;

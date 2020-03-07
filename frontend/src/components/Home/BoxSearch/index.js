@@ -1,15 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+import InputCities from '~/components/shared/InputCities';
 
 import { FiChevronRight, FiHelpCircle } from 'react-icons/fi';
 import { Container, Card, Ads } from './styles';
 
-import { FormInput, FormSelect, FormGroup } from '~/components/shared/Forms';
+import Form from '~/components/shared/Forms/Form';
+import InputGroup from '~/components/shared/Forms/InputGroup';
+import Input from '~/components/shared/Forms/Input';
+import Select from '~/components/shared/Forms/Select';
+
 import Button from '~/components/shared/Button';
 
 export default function HomeBoxSearch() {
-  const [where, setWhere] = useState('');
-  const [adults, setAdults] = useState([]);
-  const [children, setChildren] = useState([]);
+  const [city, setCity] = useState('');
+  const [checkin, setCheckin] = useState('');
+  const [checkout, setCheckout] = useState('');
+  const [adults, setAdults] = useState('');
+  const [children, setChildren] = useState('');
+
+  const [adultsArray, setAdultsArray] = useState([]);
+  const [childrenArray, setChildrenArray] = useState([]);
+
+  const citiesRef = useRef();
 
   useEffect(() => {
     async function selectAdults() {
@@ -19,7 +32,7 @@ export default function HomeBoxSearch() {
         data.push({ id: i, value: `${i} adultos` });
       }
 
-      await setAdults(data);
+      await setAdultsArray(data);
     }
 
     async function selectChildren() {
@@ -29,61 +42,73 @@ export default function HomeBoxSearch() {
         data.push({ id: i, value: `${i} crianças` });
       }
 
-      await setChildren(data);
+      await setChildrenArray(data);
     }
 
     selectAdults();
     selectChildren();
   }, []);
 
+  function onSubmit(e) {
+    e.preventDefault();
+
+    const data = {
+      city,
+      checkin,
+      checkout,
+      adults,
+      children,
+    };
+
+    console.log(data);
+  }
+
   return (
     <Container>
       <Card>
         <h1>Reserve casas, hotéis e muito mais no Airbnb</h1>
 
-        <form>
-          <FormInput
-            label="ONDE"
-            id="where"
-            value={where}
-            placeholder="Em qualquer lugar"
-            onChange={e => setWhere(e.target.value)}
-          />
+        <Form onSubmit={onSubmit}>
+          <InputCities ref={citiesRef} onChange={e => setCity(e.value)} />
 
-          <FormGroup>
-            <FormInput
+          <InputGroup>
+            <Input
               label="CHECK-IN"
-              id="checkin"
-              value=""
+              name="checkin"
               placeholder="dd/mm/aaa"
-              onChange={() => {}}
+              value={checkin}
+              onChange={e => setCheckin(e.target.value)}
             />
-            <FormInput
+            <Input
               label="CHECKOUT"
-              id="checkout"
-              value=""
+              name="checkout"
               placeholder="dd/mm/aaa"
-              onChange={() => {}}
+              value={checkout}
+              onChange={e => setCheckout(e.target.value)}
             />
-          </FormGroup>
+          </InputGroup>
 
-          <FormGroup>
-            <FormSelect
+          <InputGroup>
+            <Select
               label="ADULTOS"
-              id="adults"
-              data={adults}
+              name="adults"
+              data={adultsArray}
               placeholder="1 adulto"
+              value={adults}
+              onChange={e => setAdults(e.target.value)}
             />
-            <FormSelect
-              label="ADULTOS"
-              id="children"
-              data={children}
+            <Select
+              label="CRIANÇAS"
+              name="children"
+              data={childrenArray}
               placeholder="1 adulto"
+              value={children}
+              onChange={e => setChildren(e.target.value)}
             />
-          </FormGroup>
+          </InputGroup>
 
-          <Button label="Buscar" onClick={() => {}} block />
-        </form>
+          <Button type="submit" label="Buscar" onClick={() => {}} block />
+        </Form>
       </Card>
       <Ads>
         <div>

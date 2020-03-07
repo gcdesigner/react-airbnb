@@ -65,7 +65,7 @@ function GalleryHeader() {
             {images.map(image => (
               <BGImage
                 key={image.id}
-                src={image.image}
+                image={image.image}
                 size={['70vw', '100%']}
                 bgSize="contain"
                 className={('img', image.id === 0 && 'first')}
@@ -75,12 +75,12 @@ function GalleryHeader() {
           </Slider>
         ) : (
           <>
-            <BGImage src={images[0].image} className="first" />
+            <BGImage image={images[0].image} className="first" />
             <div className="col-right">
               {images
                 .filter((_, index) => index > 0)
                 .map((img, index) => (
-                  <BGImage key={index} src={img.image} />
+                  <BGImage key={index} image={img.image} />
                 ))}
             </div>
           </>

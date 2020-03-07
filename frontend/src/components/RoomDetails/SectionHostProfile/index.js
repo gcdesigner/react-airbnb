@@ -32,7 +32,7 @@ export default function SectionHostProfile() {
             <span>Verificado</span>
           </div>
         </div>
-        <BGImage src={avatar} size={['60px', '60px']} circle />
+        <BGImage image={avatar} size={['60px', '60px']} circle />
       </Header>
 
       <SuperHost>
@@ -105,11 +105,11 @@ export default function SectionHostProfile() {
         <AboutTheHost>
           <div>
             <span>Este é o lar de Sara & Rich.</span>
-            <BGImage src={avatar} size={['45px', '45px']} circle />
+            <BGImage image={avatar} size={['45px', '45px']} circle />
           </div>
           <div>
             <span>Geneva ajuda na hospedagem.</span>
-            <BGImage src={avatar} size={['45px', '45px']} circle />
+            <BGImage image={avatar} size={['45px', '45px']} circle />
           </div>
         </AboutTheHost>
       </AboutThisPlace>

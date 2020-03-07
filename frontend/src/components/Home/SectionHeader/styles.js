@@ -9,6 +9,7 @@ export const Header = styled.div`
 
   @media (max-width: 744px) {
     padding-bottom: 0;
+    background: #fff;
   }
 `;
 
@@ -86,7 +87,16 @@ export const Menu = styled.ul`
     }
   }
 
-  @media (max-width: 1128px) {
-    display: none;
+  @media (max-width: 744px) {
+    li {
+      &:nth-child(0),
+      &:nth-child(1),
+      &:nth-child(2) {
+        display: none;
+      }
+      a {
+        color: #484848;
+      }
+    }
   }
 `;

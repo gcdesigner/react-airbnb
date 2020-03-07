@@ -21,7 +21,7 @@ export default function SectionRecentReserved() {
 
       <List>
         <Item>
-          <BGImage link="/" src={room3} size={['164px']} />
+          <BGImage link="/" image={room3} size={['164px']} />
           <Description>
             <span>Estados Unidos</span>
             <strong>The Joshua Tree House</strong>
@@ -34,7 +34,7 @@ export default function SectionRecentReserved() {
         </Item>
 
         <Item>
-          <BGImage link="/" src={room4} size={['164px']} />
+          <BGImage link="/" image={room4} size={['164px']} />
           <Description>
             <span>Estados Unidos</span>
             <strong>The Mushroom Dome Retreat & Land of Paradise</strong>
@@ -47,7 +47,7 @@ export default function SectionRecentReserved() {
         </Item>
 
         <Item>
-          <BGImage link="/" src={room5} size={['164px']} />
+          <BGImage link="/" image={room5} size={['164px']} />
           <Description>
             <span>Estados Unidos</span>
             <strong>Underground Hyge</strong>
@@ -60,7 +60,7 @@ export default function SectionRecentReserved() {
         </Item>
 
         <Item>
-          <BGImage link="/" src={room6} size={['164px']} />
+          <BGImage link="/" image={room6} size={['164px']} />
           <Description>
             <span>Estados Unidos</span>
             <strong>Off-grid itHouse</strong>

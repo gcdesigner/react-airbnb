@@ -74,7 +74,7 @@ export default function RecommendedRooms() {
           <div ref={listRef} style={{ transform: `translateX(-${navPos}px)` }}>
             {rooms.map(room => (
               <Item ref={itemRef} key={room.id}>
-                <BGImage src={room.image} size={['222px']} />
+                <BGImage image={room.image} size={['222px']} />
 
                 <div className="meta">
                   <div className="type-rate">

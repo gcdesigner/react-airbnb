@@ -32,7 +32,7 @@ export default function SectionTopReated() {
 
       <List>
         <Item>
-          <BGImage link="/rooms/1" src={room1} size={['222px']} />
+          <BGImage link="/rooms/1" image={room1} size={['222px']} />
           <RatedStars size="20" />
           <Description>
             Os anfitriões, nos deixaram muito à vontade desde a recepção até a
@@ -40,7 +40,7 @@ export default function SectionTopReated() {
             excelente...
           </Description>
           <Author>
-            <Avatar src={avatar1} />
+            <Avatar image={avatar1} />
             <div>
               <strong>Rodrigo</strong>
               <span>Brasil</span>
@@ -49,7 +49,7 @@ export default function SectionTopReated() {
         </Item>
 
         <Item>
-          <BGImage link="/" src={room2} size={['222px']} />
+          <BGImage link="/" image={room2} size={['222px']} />
           <RatedStars size="20" />
           <Description>
             Os anfitriões, nos deixaram muito à vontade desde a recepção até a
@@ -57,7 +57,7 @@ export default function SectionTopReated() {
             excelente...
           </Description>
           <Author>
-            <Avatar src={avatar2} />
+            <Avatar image={avatar2} />
             <div>
               <strong>Rodrigo</strong>
               <span>Brasil</span>
@@ -66,7 +66,7 @@ export default function SectionTopReated() {
         </Item>
 
         <Item>
-          <BGImage link="/" src={room3} size={['222px']} />
+          <BGImage link="/" image={room3} size={['222px']} />
           <RatedStars size="20" />
           <Description>
             Os anfitriões, nos deixaram muito à vontade desde a recepção até a
@@ -74,7 +74,7 @@ export default function SectionTopReated() {
             excelente...
           </Description>
           <Author>
-            <Avatar src={avatar3} />
+            <Avatar image={avatar3} />
             <div>
               <strong>Rodrigo</strong>
               <span>Brasil</span>
