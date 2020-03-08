@@ -75,7 +75,9 @@ function GalleryHeader() {
           </Slider>
         ) : (
           <>
-            <BGImage image={images[0].image} className="first" />
+            <div class="first">
+              <BGImage image={images[0].image} className="first" />
+            </div>
             <div className="col-right">
               {images
                 .filter((_, index) => index > 0)

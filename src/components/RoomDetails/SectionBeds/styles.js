@@ -10,6 +10,13 @@ export const Container = styled.section`
 export const List = styled.div`
   display: flex;
   align-items: center;
+  margin: 0 -8px;
+
+  @media (max-width: 744px) {
+    overflow-x: auto;
+    margin: 0 -30px;
+    padding: 0 24px;
+  }
 `;
 
 export const Item = styled.div`
@@ -21,5 +28,11 @@ export const Item = styled.div`
   strong {
     display: block;
     margin-top: 24px;
+  }
+
+  @media (max-width: 744px) {
+    width: calc(50% - 8px);
+    min-width: 150px;
+    margin: 0 8px;
   }
 `;

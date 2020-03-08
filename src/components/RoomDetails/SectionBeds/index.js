@@ -15,6 +15,13 @@ export default function SectionBeds() {
             <span>1 cama queen</span>
           </div>
         </Item>
+        <Item>
+          <SVGBedQueen />
+          <div>
+            <strong>Quarto 2</strong>
+            <span>1 cama queen</span>
+          </div>
+        </Item>
       </List>
     </Container>
   );

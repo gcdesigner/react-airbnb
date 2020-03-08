@@ -38,6 +38,13 @@ export const Header = styled.div`
       }
     }
   }
+
+  @media (max-width: 744px) {
+    > div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 `;
 
 export const FormControl = styled.div`
@@ -54,6 +61,12 @@ export const FormControl = styled.div`
   input {
     border: 0;
     margin-right: 10px;
+  }
+
+  @media (max-width: 744px) {
+    width: 100%;
+    height: 46px;
+    margin: 16px 0 0;
   }
 `;
 
@@ -83,6 +96,28 @@ export const Statistics = styled.div`
           margin-right: 10px;
           background: ${colors.secondary};
           border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 744px) {
+    ul {
+      flex-direction: column;
+
+      li {
+        width: 100%;
+
+        span {
+          width: 50%;
+        }
+
+        > div {
+          width: 50%;
+
+          .barra {
+            width: 100%;
+          }
         }
       }
     }
